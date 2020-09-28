@@ -17,6 +17,6 @@ node {
    }
   
    stage('Results') {
-      junit '**/target/reports/*.xml'
+      junit '**/target/failsafe-reports/*.xml'
    }
 }
