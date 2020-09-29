@@ -15,6 +15,19 @@ node {
             ])
         }
    }
+   stage('API') {
+        try {
+            sh "mvn clean verify -Dtags='type:API'"
+        } catch (err) {
+
+        } finally {
+            publishHTML (target: [
+                    reportDir: 'target/site/serenity',
+                    reportFiles: 'cucmber_report.html',
+                    reportName: "API tests report"
+            ])
+        }
+    }
   
    stage('Results') {
       //junit '**/failsafe-reports/*.xml'
