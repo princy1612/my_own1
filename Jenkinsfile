@@ -2,7 +2,7 @@ node {
    stage('Git checkout') { // for display purposes
       git 'https://github.com/princy1612/my_own1.git'
    }
-   stage('Smoke') {
+   stage('Regression') {
         try {
             sh "mvn clean verify -Dtags='type:Regression'"
         } catch (err) {
